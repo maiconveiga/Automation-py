@@ -1,5 +1,5 @@
-('C:\\Users\\cveigam\\00 Projects\\07 Python '
- 'data\\build\\PlanningSales\\PYZ-00.pyz',
+('C:\\Users\\cveigam\\00 Projects\\01 Insights\\Automation '
+ 'py\\build\\PlanningSales\\PYZ-00.pyz',
  [('IPython',
    'C:\\Python312\\Lib\\site-packages\\IPython\\__init__.py',
    'PYMODULE'),

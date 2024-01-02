@@ -1,8 +1,8 @@
 import pandas as pd
 import datetime as dt
-import tkinter as tk
-from tkinter import filedialog
-from openpyxl import Workbook
+#import tkinter as tk
+#from tkinter import filedialog
+#from openpyxl import Workbook
 
 #pyinstaller --onefile PlanningSales.py
 print('')
@@ -14,23 +14,25 @@ print("#   Planning Sales - Coleta e tratamento de planilhas   #")
 print("#########################################################")
 print('')
 ##########################################################################
-if(format(dt.date.today(), "%m") == '1'):
+
+mes = format(dt.date.today(), "%m")
+if(format(dt.date.today(), "%m") == '01'):
     mes = 'jan'
-elif(format(dt.date.today(), "%m") == '2'):
+elif(format(dt.date.today(), "%m") == '02'):
     mes = 'fev'
-elif(format(dt.date.today(), "%m") == '3'):
+elif(format(dt.date.today(), "%m") == '03'):
     mes = 'mar'
-elif(format(dt.date.today(), "%m") == '4'):
+elif(format(dt.date.today(), "%m") == '04'):
     mes = 'abr'
-elif(format(dt.date.today(), "%m") == '5'):
+elif(format(dt.date.today(), "%m") == '05'):
     mes = 'maio'
-elif(format(dt.date.today(), "%m") == '6'):
+elif(format(dt.date.today(), "%m") == '06'):
     mes = 'jun'
-elif(format(dt.date.today(), "%m") == '7'):
+elif(format(dt.date.today(), "%m") == '07'):
     mes ='jul'
-elif(format(dt.date.today(), "%m") == '8'):
+elif(format(dt.date.today(), "%m") == '08'):
     mes = 'ago'
-elif(format(dt.date.today(), "%m") == '9'):
+elif(format(dt.date.today(), "%m") == '09'):
     mes = 'set'
 elif(format(dt.date.today(), "%m") == '10'):
     mes = 'out'
@@ -39,9 +41,12 @@ elif(format(dt.date.today(), "%m") == '11'):
 elif(format(dt.date.today(), "%m") == '12'):
     mes = 'dez'
 
+print('MÊs é '+ mes)
 ano = format(dt.date.today(), "%y")
-numero = int(format(dt.date.today(), "%y"))+int(format(dt.date.today(), "%m"))+16
+numero = int(format(dt.date.today(), "%y"))+int(format(dt.date.today(), "%m"))+27
 
+print('o Mes" ')
+print(mes)
 nomeParts = str(numero) + ". "+ str(mes) + "-" + str(ano) + " Parts"
 nomeRas = str(numero) + ". "+ str(mes) + " " + str(ano) + " RAS"
 
@@ -67,7 +72,7 @@ tabelaParts = tabelaParts.rename(columns={'CENTRO DE CUSTO': 'CENTRO DE CUSTO '}
 tabelaParts = tabelaParts.rename(columns={'CÓDIGO CEST': 'CÓDIGO CEST '})
 tabelaParts = tabelaParts.rename(columns={'SITUAÇÃO NOTA FISCAL': 'SITUAÇÃO NOTA FISCAL '})
 tabelaParts = tabelaParts.rename(columns={'NR PED TRANSF': 'NR PED TRANSF.'})
-tabelaParts["Período"] = mes+"/20"+ano
+tabelaParts["Período"] = str(mes)+"/20"+str(ano)
 
 colunas = tabelaParts.columns.to_list()
 
@@ -104,4 +109,4 @@ print(f"{nomeRas} -> Criada")
 print('-------------------------------------')
 print('')
 
-##############################################################################
+##############################################################################9
